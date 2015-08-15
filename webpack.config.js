@@ -5,13 +5,13 @@ var srcPath = path.join(__dirname, 'src');
 var distPath = path.join(__dirname, 'dist');
 
 module.exports = {
-  entry: {
-    main: './src/main.js',
-    vendor: ['react']
-  },
+  entry: [
+    'webpack/hot/only-dev-server',
+    "./src/app.js"
+  ],
   output: {
-    path: distPath, // This is where files will go
-    filename: '[name].bundle.js'
+    path: distPath,
+    filename: "bundle.js"
   },
   resolve: {
     root: srcPath,
@@ -21,11 +21,13 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.js?$/, loader: 'babel-loader', exclude: /node_modules/ }
+      { test: /\.js?$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/ },
+   //   { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
+      { test: /\.css$/, loader: "style!css" }
     ]
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'), // http://webpack.github.io/docs/code-splitting.html#split-app-and-vendor-code
+    new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
       template: 'src/index.template.html', //outputs to dist/index.html
