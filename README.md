@@ -10,3 +10,7 @@ Install Webpack globally
 npm install webpack --global
 ```
 
+```
+npm install
+```
+
