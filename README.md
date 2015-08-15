@@ -10,6 +10,8 @@ Install Webpack globally
 npm install webpack --global
 ```
 
+Install NPM dependencies
+
 ```
 npm install
 ```
