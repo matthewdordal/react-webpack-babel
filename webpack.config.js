@@ -8,7 +8,7 @@ module.exports = {
   context: srcPath,
   entry: {
     javascript: [
-      'webpack-dev-server/client?http://localhost:3000',
+      'webpack-dev-server/client',
       'webpack/hot/only-dev-server',
       './app.js'
     ]

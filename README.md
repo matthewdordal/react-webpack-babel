@@ -17,10 +17,16 @@ Install NPM dependencies
 npm install
 ```
 
+Build the app
+
+```
+webpack
+```
+
 Run webpack-dev-server and visit `http://localhost:8080`
 
 ```
-webpack-dev-server
+npm start
 ```
 
 
